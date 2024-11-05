@@ -1,0 +1,5 @@
+# Ignore all __init__.py files
+**/__init__.py
+
+# Ignore the virtual environment directory
+venv/

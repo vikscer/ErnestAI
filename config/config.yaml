@@ -1,0 +1,24 @@
+# config/config.yaml
+
+# API keys for external services
+api_keys:
+  openai: "your-openai-api-key"
+  elevenlabs: "your-elevenlabs-api-key"
+
+# Assistant settings
+wake_word: "assistant"   # Customize your wake word here
+
+# Webhook URLs for smart home control
+webhooks:
+  lights_on: "http://your-smart-home-url/api/lights/on"
+  lights_off: "http://your-smart-home-url/api/lights/off"
+
+# Paths for static assets
+static:
+  listening_tone: "static/sounds/listening_tone.wav"
+  voices: "static/voices/"
+
+# Logging settings
+logging:
+  level: "INFO"
+  file: "logs/assistant.log"
