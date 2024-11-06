@@ -3,3 +3,15 @@
 
 # Ignore the virtual environment directory
 venv/
+dir-name/
+
+# Ignore API keys file
+config/api_keys.json
+config/googlauth.json
+
+# Ignore training data
+src/wake_word_data
+src/wake_word_data/wake_word_utils/splitter_results
+
+# Ignore all temporary files
+temp/

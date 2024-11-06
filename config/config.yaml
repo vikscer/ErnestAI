@@ -1,12 +1,8 @@
 # config/config.yaml
 
-# API keys for external services
-api_keys:
-  openai: "your-openai-api-key"
-  elevenlabs: "your-elevenlabs-api-key"
-
-# Assistant settings
-wake_word: "assistant"   # Customize your wake word here
+# Keyword recognition
+picovoice:
+  keyword_path: "models/keyowrd.ppn"
 
 # Webhook URLs for smart home control
 webhooks:
@@ -15,7 +11,7 @@ webhooks:
 
 # Paths for static assets
 static:
-  listening_tone: "static/sounds/listening_tone.wav"
+  listening_tone: "static/sounds/coee.wav"
   voices: "static/voices/"
 
 # Logging settings
