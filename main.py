@@ -22,15 +22,20 @@ def save_text_to_file(text, filename):
         f.write(text)
     print(f"Text saved to {filename}")
 
-def record_audio_until_silence(duration=2, threshold=0.02, device_index=0):
+def record_audio_until_silence(duration=2, threshold=0.02, device_index=1):
     """Record audio from the specified device until silence is detected for a specified duration."""
     print("Recording started...")
     recorded_data = []
     silence_start_time = None
 
+    # Record continuously with a larger buffer size
+    buffer_duration = 2  # Record in 2-second chunks
+    sample_rate = 32000
+    buffer_samples = int(buffer_duration * sample_rate)
+
     while True:
-        # Record for 1 second at a time, using the specified device
-        audio_data = sd.rec(int(16000), samplerate=16000, channels=1, device=device_index)
+        # Record audio in larger chunks for smoother transitions
+        audio_data = sd.rec(buffer_samples, samplerate=sample_rate, channels=1, device=device_index)
         sd.wait()
 
         # Check if audio exceeds the silence threshold
@@ -47,12 +52,13 @@ def record_audio_until_silence(duration=2, threshold=0.02, device_index=0):
                 print("Silence detected. Stopping recording.")
                 break
 
-    # Combine all recorded chunks into one
+    # Combine all recorded chunks into one array
     recorded_audio = np.concatenate(recorded_data, axis=0)
 
     # Save the recorded audio to a temporary file
     audio_file_path = "temp/temp_audio.wav"
-    sf.write(audio_file_path, recorded_audio, 16000)
+    sf.write(audio_file_path, recorded_audio, sample_rate)
+    print(f"Audio saved to {audio_file_path}")
     return audio_file_path
 
 def main():

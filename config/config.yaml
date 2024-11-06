@@ -1,5 +1,9 @@
 # config/config.yaml
 
+# Assistant Personality
+assistant:
+  character: "adam"
+
 # Keyword recognition
 picovoice:
   keyword_path: "models/keyowrd.ppn"
@@ -9,9 +13,19 @@ webhooks:
   lights_on: "http://your-smart-home-url/api/lights/on"
   lights_off: "http://your-smart-home-url/api/lights/off"
 
+# Elevenlabs config
+
+elevenlabs:
+  voice_id: "6zicmgdIz4R8KLcDyKh5"
+  # Ernest's voice id HKAraoM4XkoVRdCc6Iq9
+  # Adam's voice id 6zicmgdIz4R8KLcDyKh5
+  stability: "0.75"
+  similarity_boost: "1.0"
+  style: "0.40"
+
 # Paths for static assets
 static:
-  listening_tone: "static/sounds/coee.wav"
+  listening_tone_path: "static/sounds/"
   voices: "static/voices/"
 
 # Logging settings

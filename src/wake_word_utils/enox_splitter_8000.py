@@ -68,6 +68,6 @@ def process_directory(input_dir, output_dir, sample_rate=16000, segment_duration
 
 
 # Example usage
-input_directory = "../wake_word_detection/enoxkokot/"
-output_directory = "../wake_word_detection/splitter_results/"
+input_directory = "../wake_word_utils/enoxkokot/"
+output_directory = "../wake_word_utils/splitter_results/"
 process_directory(input_directory, output_directory)
