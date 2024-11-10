@@ -9,7 +9,7 @@ import os
 
 # Load configuration
 config = load_config()
-listening_tone_path = config['static']['listening_tone'] + config['assistant']['character'] + 'wav'
+listening_tone_path = config['static']['listening_tone_path'] + config['assistant']['character'] + '.wav'
 
 # Load the trained model
 clf = joblib.load('src/wake_word_detection/wake_word_model.pkl')
@@ -38,7 +38,7 @@ def detect_wake_word(audio_data, threshold=0.8):
     # Return True if the probability exceeds the threshold, otherwise False
     return prob >= threshold
 
-def listen_for_wake_word(threshold=0.65, window_duration=0.7, hop_duration=0.1):
+def listen_for_wake_word(threshold=0.8, window_duration=0.7, hop_duration=0.1):
     wake_word_samples_dir = "src/wake_word_data/wake_word"
     """Listens for the wake word and saves detected snippets as samples."""
     print("Listening for wake word...")

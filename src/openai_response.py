@@ -20,7 +20,7 @@ conversation_memory = []
 
 def get_time():
     """Returns the current time as a string."""
-    return datetime.now().strftime("%H:%M")
+    return datetime.now().strftime("%d/%m/%Y %H:%M")
 
 
 def get_weather():

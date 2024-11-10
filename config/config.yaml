@@ -2,7 +2,7 @@
 
 # Assistant Personality
 assistant:
-  character: "adam"
+  character: "ernest"
 
 # Keyword recognition
 picovoice:
@@ -16,7 +16,7 @@ webhooks:
 # Elevenlabs config
 
 elevenlabs:
-  voice_id: "6zicmgdIz4R8KLcDyKh5"
+  voice_id: "HKAraoM4XkoVRdCc6Iq9"
   # Ernest's voice id HKAraoM4XkoVRdCc6Iq9
   # Adam's voice id 6zicmgdIz4R8KLcDyKh5
   stability: "0.75"
